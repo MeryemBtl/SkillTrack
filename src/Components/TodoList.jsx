@@ -1,9 +1,21 @@
 import TodoItem from './TodoItem'
 
 /**
- * Todo listesi - Listeleme işlemi
+ * Todo listesi - Kutu kutu (kart) listeleme
  */
-export default function TodoList({ todos, onToggle, onEdit, onDelete, editingId, editValue, onEditSubmit, onEditCancel }) {
+export default function TodoList({
+  todos,
+  onToggle,
+  onEdit,
+  onDelete,
+  editingId,
+  editTitle,
+  editWorkDuration,
+  editWorkDescription,
+  onEditSubmit,
+  onEditCancel,
+  onMarkComplete,
+}) {
   if (todos.length === 0) {
     return (
       <p className="text-center text-slate-500 dark:text-slate-400 py-8">
@@ -13,7 +25,7 @@ export default function TodoList({ todos, onToggle, onEdit, onDelete, editingId,
   }
 
   return (
-    <ul className="space-y-2">
+    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
       {todos.map((todo) => (
         <TodoItem
           key={todo.id}
@@ -22,9 +34,12 @@ export default function TodoList({ todos, onToggle, onEdit, onDelete, editingId,
           onEdit={onEdit}
           onDelete={onDelete}
           isEditing={editingId === todo.id}
-          editValue={editingId === todo.id ? editValue : ''}
-          onEditSubmit={(id, newTitle) => onEditSubmit(id, newTitle)}
+          editTitle={editingId === todo.id ? editTitle : ''}
+          editWorkDuration={editingId === todo.id ? editWorkDuration : ''}
+          editWorkDescription={editingId === todo.id ? editWorkDescription : ''}
+          onEditSubmit={onEditSubmit}
           onEditCancel={onEditCancel}
+          onMarkComplete={onMarkComplete}
         />
       ))}
     </ul>
