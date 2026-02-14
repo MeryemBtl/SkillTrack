@@ -2,6 +2,8 @@
 
 Web Geliştirme / Javascript eğitim projesi. ReactJS ile geliştirilmiş, **Ekle**, **Listele**, **Güncelle** ve **Sil** (CRUD) işlemlerini içeren bir TODO uygulamasıdır.
 
+**Repo:** [https://github.com/MeryemBtl/SkillTrack](https://github.com/MeryemBtl/SkillTrack)
+
 ## Teknolojiler
 
 - **React** (Vite)
@@ -12,22 +14,34 @@ Web Geliştirme / Javascript eğitim projesi. ReactJS ile geliştirilmiş, **Ekl
 
 ```
 src/
-├── Components/    # TodoForm, TodoList, TodoItem
-├── Pages/         # TodoPage
-├── Interfaces/    # Todo (tip/yardımcı)
+├── Components/       # TodoForm, TodoList, TodoItem, ProgressListView
+├── Pages/            # TodoPage
+├── Interfaces/       # Todo (tip/yardımcı)
 ├── App.jsx
 ├── main.jsx
 └── index.css
 ```
 
+## Özellikler
+
+- **Görevleri kutu (kart) görünümünde listeleme** – Her görev ayrı bir kartta, grid düzeninde.
+- **Düzenleme formu** – Düzenle’ye basınca:
+  - Görev başlığı
+  - **Ne kadar çalışıldı?** (örn: 2 saat, 45 dakika)
+  - **Ne çalışıldı?** (yapılan işlerin açıklaması)
+  - **Güncelle**, **İlerleme tamamlandı**, **Sil**, **İptal** butonları
+- **İlerleme tamamlandı butonu** – İlerleme bilgilerini kaydedip görevi tamamlandı olarak işaretler.
+- **Tüm görevler ve ilerlemeler** – Tüm görevleri ilerleme bilgileriyle (süre, yapılanlar, tamamlandı/devam ediyor) listeleyen buton ve görünüm.
+- Veriler tarayıcıda **localStorage** ile saklanır.
+
 ## CRUD İşlemleri
 
-| İşlem   | Açıklama                          |
-|--------|------------------------------------|
-| **Ekle** | Yeni görev form ile eklenir        |
-| **Listele** | Tüm görevler listelenir           |
-| **Güncelle** | Düzenle butonu ile metin güncellenir, checkbox ile tamamlandı işaretlenir |
-| **Sil** | Sil butonu ile görev kaldırılır   |
+| İşlem       | Açıklama                                                                 |
+|------------|---------------------------------------------------------------------------|
+| **Ekle**   | Yeni görev form ile eklenir.                                              |
+| **Listele**| Görevler kartlar halinde listelenir; "Tüm görevler ve ilerlemeler" ile detaylı liste. |
+| **Güncelle**| Düzenle ile başlık, süre ve açıklama güncellenir; "İlerleme tamamlandı" ile kaydedilip tamamlandı işaretlenir. |
+| **Sil**    | Sil butonu ile görev kaldırılır (kartta veya düzenleme formunda).         |
 
 ## Yerel Çalıştırma
 
@@ -46,35 +60,24 @@ npm run build
 
 Çıktı `dist/` klasöründe oluşur.
 
-## GitHub'a Yükleme
+## GitHub
 
-```bash
-git add .
-git commit -m "SkillTrack TODO - React CRUD projesi"
-# GitHub'da yeni repo oluşturun: https://github.com/new (ör: SkillTrack, public)
-git remote add origin https://github.com/KULLANICI_ADINIZ/SkillTrack.git
-git branch -M main
-git push -u origin main
-```
-
-`KULLANICI_ADINIZ` yerine kendi GitHub kullanıcı adınızı yazın.
+Proje: **[https://github.com/MeryemBtl/SkillTrack](https://github.com/MeryemBtl/SkillTrack)**
 
 ## Netlify ile Yayına Alma
 
 1. [Netlify](https://www.netlify.com/) hesabı açın.
-2. "Add new site" → "Import an existing project" → GitHub repo’nuzu seçin.
+2. "Add new site" → "Import an existing project" → [MeryemBtl/SkillTrack](https://github.com/MeryemBtl/SkillTrack) repo’sunu seçin.
 3. Build ayarları: Build command: `npm run build`, Publish directory: `dist`.
 4. Deploy edin. `netlify.toml` dosyası SPA yönlendirmesini otomatik ayarlar.
 5. Canlı site linkini proje teslim formunda paylaşın.
 
 ## Ekran Görüntüsü
 
-Proje çalıştırıldığında ana sayfa aşağıdaki gibidir. En az bir ekran görüntüsü proje teslim formuna eklenebilir.
+Proje çalıştırıldığında ana sayfa: görev ekleme alanı, "Tüm görevler ve ilerlemeler" butonu ve görev kartları.
 
 ![SkillTrack TODO](screenshot.png)
 
-*(Çalışan uygulamanın ekran görüntüsü `screenshot.png` olarak proje köküne kaydedilebilir.)*
-
 ## Lisans
 
-Eğitim projesi - serbest kullanım.
+Eğitim projesi – serbest kullanım.
