@@ -49,17 +49,6 @@ src/
 npm install
 npm run dev
 ```
-
-Tarayıcıda `http://localhost:5173` adresini açın.
-
-## Build (Netlify / Production)
-
-```bash
-npm run build
-```
-
-Çıktı `dist/` klasöründe oluşur.
-
 ## Ekran Görüntüsü
 
 Proje çalıştırıldığında ana sayfa: görev ekleme alanı, "Tüm görevler ve ilerlemeler" butonu ve görev kartları.
