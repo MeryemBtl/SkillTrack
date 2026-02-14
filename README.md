@@ -60,18 +60,6 @@ npm run build
 
 Çıktı `dist/` klasöründe oluşur.
 
-## GitHub
-
-Proje: **[https://github.com/MeryemBtl/SkillTrack](https://github.com/MeryemBtl/SkillTrack)**
-
-## Netlify ile Yayına Alma
-
-1. [Netlify](https://www.netlify.com/) hesabı açın.
-2. "Add new site" → "Import an existing project" → [MeryemBtl/SkillTrack](https://github.com/MeryemBtl/SkillTrack) repo’sunu seçin.
-3. Build ayarları: Build command: `npm run build`, Publish directory: `dist`.
-4. Deploy edin. `netlify.toml` dosyası SPA yönlendirmesini otomatik ayarlar.
-5. Canlı site linkini proje teslim formunda paylaşın.
-
 ## Ekran Görüntüsü
 
 Proje çalıştırıldığında ana sayfa: görev ekleme alanı, "Tüm görevler ve ilerlemeler" butonu ve görev kartları.
